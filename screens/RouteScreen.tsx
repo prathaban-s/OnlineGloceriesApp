@@ -8,6 +8,7 @@ import {
 } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import LoginScreen from "./LoginScreen";
+import PinScreen from "./PinScreen";
 
 const Stack = createNativeStackNavigator();
 const RouteScreen = () => {
@@ -15,17 +16,14 @@ const RouteScreen = () => {
     <>
       <StatusBar style="inverted" />
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            name="Home"
-            component={HomeScreen}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Login"
-            component={LoginScreen}
-            options={{ headerShown: false }}
-          />
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Pin" component={PinScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
